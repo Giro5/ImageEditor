@@ -37,6 +37,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsPnl = new System.Windows.Forms.Panel();
+            this.PencilBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +48,8 @@
             this.BackgroundPnl = new System.Windows.Forms.Panel();
             this.ShadowPic = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PencilBtn = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.Color1Btn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ToolsPnl.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -118,6 +120,7 @@
             // 
             this.ToolsPnl.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ToolsPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ToolsPnl.Controls.Add(this.Color1Btn);
             this.ToolsPnl.Controls.Add(this.PencilBtn);
             this.ToolsPnl.Controls.Add(this.label4);
             this.ToolsPnl.Controls.Add(this.label3);
@@ -128,6 +131,21 @@
             this.ToolsPnl.Name = "ToolsPnl";
             this.ToolsPnl.Size = new System.Drawing.Size(1215, 100);
             this.ToolsPnl.TabIndex = 1;
+            // 
+            // PencilBtn
+            // 
+            this.PencilBtn.AccessibleDescription = "0";
+            this.PencilBtn.FlatAppearance.BorderSize = 0;
+            this.PencilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PencilBtn.Location = new System.Drawing.Point(199, 9);
+            this.PencilBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.PencilBtn.Name = "PencilBtn";
+            this.PencilBtn.Size = new System.Drawing.Size(25, 25);
+            this.PencilBtn.TabIndex = 4;
+            this.PencilBtn.Tag = "";
+            this.PencilBtn.Text = "P";
+            this.PencilBtn.UseVisualStyleBackColor = true;
+            this.PencilBtn.Click += new System.EventHandler(this.PencilBtn_Click);
             // 
             // label4
             // 
@@ -230,22 +248,19 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
-            // PencilBtn
+            // Color1Btn
             // 
-            this.PencilBtn.FlatAppearance.BorderSize = 0;
-            this.PencilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PencilBtn.Location = new System.Drawing.Point(199, 9);
-            this.PencilBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.PencilBtn.Name = "PencilBtn";
-            this.PencilBtn.Size = new System.Drawing.Size(25, 25);
-            this.PencilBtn.TabIndex = 4;
-            this.PencilBtn.Tag = "0";
-            this.PencilBtn.Text = "P";
-            this.PencilBtn.UseVisualStyleBackColor = true;
-            this.PencilBtn.Click += new System.EventHandler(this.PencilBtn_Click);
+            this.Color1Btn.BackColor = System.Drawing.Color.Black;
+            this.Color1Btn.Location = new System.Drawing.Point(768, 20);
+            this.Color1Btn.Name = "Color1Btn";
+            this.Color1Btn.Size = new System.Drawing.Size(35, 35);
+            this.Color1Btn.TabIndex = 5;
+            this.Color1Btn.UseVisualStyleBackColor = false;
+            this.Color1Btn.Click += new System.EventHandler(this.Color1Btn_Click);
             // 
             // Form1
             // 
@@ -298,6 +313,8 @@
         private System.Windows.Forms.Panel ShadowPic;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button PencilBtn;
+        private System.Windows.Forms.Button Color1Btn;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 

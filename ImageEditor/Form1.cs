@@ -14,8 +14,11 @@ namespace ImageEditor
 {
     public partial class Form1 : Form
     {
-        Point movestart;
+        Point movestart, prev, delta;
+        Point[] PencilPoints;
         Size sizestartPct, sizestartPnl;
+        Pen MyPen = new Pen(Color.Black, 1);
+
         enum Painters
         {
             Pencil = 0,
@@ -27,7 +30,10 @@ namespace ImageEditor
             Rectangle,
 
         }
-        Painters ToolNow = Painters.Brush;
+        Painters Painter;
+
+        //Image Pic;
+        //Graphics GraphPic;
 
         public Form1()
         {
@@ -37,6 +43,7 @@ namespace ImageEditor
         private void Form1_Load(object sender, EventArgs e)
         {
             SizePictureTSSL.Text = $"{pictureBox1.Width} × {pictureBox1.Height}px";
+            //Pic = (Image)pictureBox1?.Image?.Clone();
         }
 
         private void ShadowPic_MouseDown(object sender, MouseEventArgs e)
@@ -73,22 +80,50 @@ namespace ImageEditor
             LocationMouseTSSL.Text = "";
         }
 
+        private void Color1Btn_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+                Color1Btn.BackColor = colorDialog1.Color;
+            MyPen.Color = Color1Btn.BackColor;
+        }
+
         private void PencilBtn_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             b.FlatStyle = FlatStyle.Popup;
             
-            ToolNow = 0;
-            label1.Text = ToolNow.ToString();
+            Painter = (Painters)Convert.ToInt32(b.AccessibleDescription);
+            label1.Text = Painter.ToString();
             string file = Application.StartupPath;
             //C:\Users\Giro\source\repos\ImageEditor\ImageEditor\bin\Debug
             string curfile = $@"{string.Join(@"\", file.Split('\\'), 0, 7)}\Pencil.cur";
             pictureBox1.Cursor = new Cursor(curfile);
+            
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                PencilPoints = new Point[1] { new Point(e.X, e.Y) };
+            }
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
+
             LocationMouseTSSL.Text = $"{e.X}, {e.Y}px";
+            //if ((e.Button & MouseButtons.Left) != 0)
+            if (e.Button == MouseButtons.Left)
+            {
+                if (Painter == Painters.Pencil)
+                {
+                    Array.Resize(ref PencilPoints, PencilPoints.Length + 1);
+                    PencilPoints[PencilPoints.Length - 1] = new Point(e.X, e.Y);
+                    pictureBox1.CreateGraphics().DrawCurve(MyPen, PencilPoints);
+                }
+            }
+            //prev = new Point(e.X, e.Y);
         }
     }
 }
