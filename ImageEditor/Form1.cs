@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.DirectoryServices;
 
 namespace ImageEditor
 {
@@ -15,6 +16,18 @@ namespace ImageEditor
     {
         Point movestart;
         Size sizestartPct, sizestartPnl;
+        enum Painters
+        {
+            Pencil = 0,
+            Brush,
+            Text,
+            Ellipse,
+            Line,
+            Curve,
+            Rectangle,
+
+        }
+        Painters ToolNow = Painters.Brush;
 
         public Form1()
         {
@@ -23,10 +36,10 @@ namespace ImageEditor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SizePictureTSSL.Text = $"{pictureBox1.Width} × {pictureBox1.Height}";
+            SizePictureTSSL.Text = $"{pictureBox1.Width} × {pictureBox1.Height}px";
         }
 
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        private void ShadowPic_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -36,7 +49,7 @@ namespace ImageEditor
             }
         }
 
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        private void ShadowPic_MouseMove(object sender, MouseEventArgs e)
         {
             if ((e.Button & MouseButtons.Left) != 0)
             {
@@ -52,12 +65,25 @@ namespace ImageEditor
 
         private void pictureBox1_SizeChanged(object sender, EventArgs e)
         {
-            SizePictureTSSL.Text = $"{pictureBox1.Width} × {pictureBox1.Height}";
+            SizePictureTSSL.Text = $"{pictureBox1.Width} × {pictureBox1.Height}px";
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             LocationMouseTSSL.Text = "";
+        }
+
+        private void PencilBtn_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            b.FlatStyle = FlatStyle.Popup;
+            
+            ToolNow = 0;
+            label1.Text = ToolNow.ToString();
+            string file = Application.StartupPath;
+            //C:\Users\Giro\source\repos\ImageEditor\ImageEditor\bin\Debug
+            string curfile = $@"{string.Join(@"\", file.Split('\\'), 0, 7)}\Pencil.cur";
+            pictureBox1.Cursor = new Cursor(curfile);
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
