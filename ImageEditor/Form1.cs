@@ -21,7 +21,8 @@ namespace ImageEditor
 
         enum Painters
         {
-            Pencil = 0,
+            None = 0,
+            Pencil = 1,
             Brush,
             Text,
             Ellipse,
@@ -30,7 +31,7 @@ namespace ImageEditor
             Rectangle,
 
         }
-        Painters Painter;
+        Painters Painter = Painters.None;
 
         //Image Pic;
         //Graphics GraphPic;
@@ -44,6 +45,10 @@ namespace ImageEditor
         {
             SizePictureTSSL.Text = $"{pictureBox1.Width} × {pictureBox1.Height}px";
             //Pic = (Image)pictureBox1?.Image?.Clone();
+            label1.Text = Painter.ToString();
+            for (int i = 100; i >= 1; i--)
+                domainUpDown1.Items.Add(i);
+            domainUpDown1.SelectedIndex = 99;
         }
 
         private void ShadowPic_MouseDown(object sender, MouseEventArgs e)
@@ -63,10 +68,6 @@ namespace ImageEditor
                 Point deltaPos = new Point(e.X - movestart.X, e.Y - movestart.Y);
                 pictureBox1.Size = new Size(sizestartPct.Width + deltaPos.X, sizestartPct.Height + deltaPos.Y);
                 ShadowPic.Size = new Size(sizestartPnl.Width + deltaPos.X, sizestartPnl.Height + deltaPos.Y);
-                //label1.Text = $"{e.X} {e.Y}";
-                //label2.Text = $"{movestart.X} {movestart.Y}";
-                //label3.Text = $"{pictureBox1.Width} {pictureBox1.Height}";
-                //label4.Text = $"{panel2.Width} {panel2.Height}";
             }
         }
 
@@ -85,6 +86,13 @@ namespace ImageEditor
             if (colorDialog1.ShowDialog() == DialogResult.OK)
                 Color1Btn.BackColor = colorDialog1.Color;
             MyPen.Color = Color1Btn.BackColor;
+        }
+
+        private void domainUpDown1_TextChanged(object sender, EventArgs e)
+        {
+            int val;
+            if (int.TryParse(domainUpDown1.Text, out val))
+                MyPen.Width = val;
         }
 
         private void PencilBtn_Click(object sender, EventArgs e)

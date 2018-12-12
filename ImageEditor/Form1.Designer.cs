@@ -37,6 +37,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsPnl = new System.Windows.Forms.Panel();
+            this.Color1Btn = new System.Windows.Forms.Button();
             this.PencilBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +50,9 @@
             this.ShadowPic = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.Color1Btn = new System.Windows.Forms.Button();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.TopRightAnglePnl = new System.Windows.Forms.Panel();
+            this.BotLeftAnglePnl = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.ToolsPnl.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -120,6 +123,7 @@
             // 
             this.ToolsPnl.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ToolsPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ToolsPnl.Controls.Add(this.domainUpDown1);
             this.ToolsPnl.Controls.Add(this.Color1Btn);
             this.ToolsPnl.Controls.Add(this.PencilBtn);
             this.ToolsPnl.Controls.Add(this.label4);
@@ -132,9 +136,19 @@
             this.ToolsPnl.Size = new System.Drawing.Size(1215, 100);
             this.ToolsPnl.TabIndex = 1;
             // 
+            // Color1Btn
+            // 
+            this.Color1Btn.BackColor = System.Drawing.Color.Black;
+            this.Color1Btn.Location = new System.Drawing.Point(768, 20);
+            this.Color1Btn.Name = "Color1Btn";
+            this.Color1Btn.Size = new System.Drawing.Size(35, 35);
+            this.Color1Btn.TabIndex = 5;
+            this.Color1Btn.UseVisualStyleBackColor = false;
+            this.Color1Btn.Click += new System.EventHandler(this.Color1Btn_Click);
+            // 
             // PencilBtn
             // 
-            this.PencilBtn.AccessibleDescription = "0";
+            this.PencilBtn.AccessibleDescription = "1";
             this.PencilBtn.FlatAppearance.BorderSize = 0;
             this.PencilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PencilBtn.Location = new System.Drawing.Point(199, 9);
@@ -179,9 +193,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(1070, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Painter";
             // 
             // statusStrip1
             // 
@@ -228,12 +242,15 @@
             // 
             // ShadowPic
             // 
-            this.ShadowPic.BackColor = System.Drawing.Color.DimGray;
+            this.ShadowPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.ShadowPic.Controls.Add(this.BotLeftAnglePnl);
+            this.ShadowPic.Controls.Add(this.TopRightAnglePnl);
             this.ShadowPic.Controls.Add(this.pictureBox1);
             this.ShadowPic.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
             this.ShadowPic.Location = new System.Drawing.Point(5, 5);
+            this.ShadowPic.MinimumSize = new System.Drawing.Size(5, 5);
             this.ShadowPic.Name = "ShadowPic";
-            this.ShadowPic.Size = new System.Drawing.Size(1000, 500);
+            this.ShadowPic.Size = new System.Drawing.Size(1005, 505);
             this.ShadowPic.TabIndex = 3;
             this.ShadowPic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShadowPic_MouseDown);
             this.ShadowPic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShadowPic_MouseMove);
@@ -244,7 +261,7 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(995, 495);
+            this.pictureBox1.Size = new System.Drawing.Size(1000, 500);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
@@ -252,15 +269,32 @@
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
-            // Color1Btn
+            // domainUpDown1
             // 
-            this.Color1Btn.BackColor = System.Drawing.Color.Black;
-            this.Color1Btn.Location = new System.Drawing.Point(768, 20);
-            this.Color1Btn.Name = "Color1Btn";
-            this.Color1Btn.Size = new System.Drawing.Size(35, 35);
-            this.Color1Btn.TabIndex = 5;
-            this.Color1Btn.UseVisualStyleBackColor = false;
-            this.Color1Btn.Click += new System.EventHandler(this.Color1Btn_Click);
+            this.domainUpDown1.BackColor = System.Drawing.SystemColors.Window;
+            this.domainUpDown1.Location = new System.Drawing.Point(525, 14);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(72, 20);
+            this.domainUpDown1.TabIndex = 6;
+            this.domainUpDown1.TextChanged += new System.EventHandler(this.domainUpDown1_TextChanged);
+            // 
+            // TopRightAnglePnl
+            // 
+            this.TopRightAnglePnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TopRightAnglePnl.BackColor = System.Drawing.SystemColors.GrayText;
+            this.TopRightAnglePnl.Location = new System.Drawing.Point(1000, 0);
+            this.TopRightAnglePnl.Name = "TopRightAnglePnl";
+            this.TopRightAnglePnl.Size = new System.Drawing.Size(5, 5);
+            this.TopRightAnglePnl.TabIndex = 4;
+            // 
+            // BotLeftAnglePnl
+            // 
+            this.BotLeftAnglePnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BotLeftAnglePnl.BackColor = System.Drawing.SystemColors.GrayText;
+            this.BotLeftAnglePnl.Location = new System.Drawing.Point(0, 500);
+            this.BotLeftAnglePnl.Name = "BotLeftAnglePnl";
+            this.BotLeftAnglePnl.Size = new System.Drawing.Size(5, 5);
+            this.BotLeftAnglePnl.TabIndex = 5;
             // 
             // Form1
             // 
@@ -315,6 +349,9 @@
         private System.Windows.Forms.Button PencilBtn;
         private System.Windows.Forms.Button Color1Btn;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.Panel BotLeftAnglePnl;
+        private System.Windows.Forms.Panel TopRightAnglePnl;
     }
 }
 
