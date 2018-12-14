@@ -88,6 +88,7 @@
     <None Include="Resources\icons8_Surface_32px.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cursor1.cur" />
     <Content Include="Pencil.cur" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

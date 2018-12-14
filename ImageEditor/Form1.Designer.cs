@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,6 +39,13 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsPnl = new System.Windows.Forms.Panel();
+            this.RectangleBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Color2Btn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.PaletteBtn = new System.Windows.Forms.Button();
+            this.ImgsPalette = new System.Windows.Forms.ImageList(this.components);
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.Color1Btn = new System.Windows.Forms.Button();
             this.PencilBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,11 +57,11 @@
             this.SizePictureTSSL = new System.Windows.Forms.ToolStripStatusLabel();
             this.BackgroundPnl = new System.Windows.Forms.Panel();
             this.ShadowPic = new System.Windows.Forms.Panel();
+            this.BotLeftAnglePnl = new System.Windows.Forms.Panel();
+            this.TopRightAnglePnl = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
-            this.TopRightAnglePnl = new System.Windows.Forms.Panel();
-            this.BotLeftAnglePnl = new System.Windows.Forms.Panel();
+            this.FoldingPaletteTmr = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.ToolsPnl.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -63,16 +72,19 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(1215, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
@@ -80,49 +92,66 @@
             this.saveAsToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
             // 
+            this.newToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.newToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
+            this.openToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.openToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.saveToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
+            this.saveAsToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.saveAsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             // 
             // toolStripSeparator1
             // 
+            this.toolStripSeparator1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(111, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // ToolsPnl
             // 
-            this.ToolsPnl.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ToolsPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ToolsPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ToolsPnl.Controls.Add(this.RectangleBtn);
+            this.ToolsPnl.Controls.Add(this.label6);
+            this.ToolsPnl.Controls.Add(this.Color2Btn);
+            this.ToolsPnl.Controls.Add(this.label5);
+            this.ToolsPnl.Controls.Add(this.PaletteBtn);
             this.ToolsPnl.Controls.Add(this.domainUpDown1);
             this.ToolsPnl.Controls.Add(this.Color1Btn);
             this.ToolsPnl.Controls.Add(this.PencilBtn);
@@ -136,10 +165,92 @@
             this.ToolsPnl.Size = new System.Drawing.Size(1215, 100);
             this.ToolsPnl.TabIndex = 1;
             // 
+            // RectangleBtn
+            // 
+            this.RectangleBtn.AccessibleDescription = "7";
+            this.RectangleBtn.FlatAppearance.BorderSize = 0;
+            this.RectangleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RectangleBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.RectangleBtn.Location = new System.Drawing.Point(256, 10);
+            this.RectangleBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.RectangleBtn.Name = "RectangleBtn";
+            this.RectangleBtn.Size = new System.Drawing.Size(25, 25);
+            this.RectangleBtn.TabIndex = 11;
+            this.RectangleBtn.Tag = "";
+            this.RectangleBtn.Text = "R";
+            this.RectangleBtn.UseVisualStyleBackColor = true;
+            this.RectangleBtn.Click += new System.EventHandler(this.PainterBtn_Click);
+            // 
+            // label6
+            // 
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(674, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 26);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Color 2";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Color2Btn
+            // 
+            this.Color2Btn.BackColor = System.Drawing.Color.White;
+            this.Color2Btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Color2Btn.Location = new System.Drawing.Point(674, 5);
+            this.Color2Btn.Name = "Color2Btn";
+            this.Color2Btn.Size = new System.Drawing.Size(35, 35);
+            this.Color2Btn.TabIndex = 9;
+            this.Color2Btn.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(628, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 26);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Color 1";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PaletteBtn
+            // 
+            this.PaletteBtn.FlatAppearance.BorderSize = 0;
+            this.PaletteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PaletteBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.PaletteBtn.ImageKey = "Palette_Step0.png";
+            this.PaletteBtn.ImageList = this.ImgsPalette;
+            this.PaletteBtn.Location = new System.Drawing.Point(901, 9);
+            this.PaletteBtn.Name = "PaletteBtn";
+            this.PaletteBtn.Size = new System.Drawing.Size(35, 35);
+            this.PaletteBtn.TabIndex = 7;
+            this.PaletteBtn.UseVisualStyleBackColor = true;
+            this.PaletteBtn.Click += new System.EventHandler(this.PaletteBtn_Click);
+            this.PaletteBtn.MouseEnter += new System.EventHandler(this.PaletteBtn_MouseEnter);
+            this.PaletteBtn.MouseLeave += new System.EventHandler(this.PaletteBtn_MouseLeave);
+            // 
+            // ImgsPalette
+            // 
+            this.ImgsPalette.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImgsPalette.ImageStream")));
+            this.ImgsPalette.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImgsPalette.Images.SetKeyName(0, "Palette_Step0.png");
+            this.ImgsPalette.Images.SetKeyName(1, "Palette_Step1.png");
+            this.ImgsPalette.Images.SetKeyName(2, "Palette_Step2.png");
+            this.ImgsPalette.Images.SetKeyName(3, "Palette_Step3.png");
+            // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.BackColor = System.Drawing.SystemColors.Window;
+            this.domainUpDown1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.domainUpDown1.Location = new System.Drawing.Point(525, 14);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(72, 20);
+            this.domainUpDown1.TabIndex = 6;
+            this.domainUpDown1.TextChanged += new System.EventHandler(this.domainUpDown1_TextChanged);
+            // 
             // Color1Btn
             // 
             this.Color1Btn.BackColor = System.Drawing.Color.Black;
-            this.Color1Btn.Location = new System.Drawing.Point(768, 20);
+            this.Color1Btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Color1Btn.Location = new System.Drawing.Point(628, 5);
             this.Color1Btn.Name = "Color1Btn";
             this.Color1Btn.Size = new System.Drawing.Size(35, 35);
             this.Color1Btn.TabIndex = 5;
@@ -151,6 +262,7 @@
             this.PencilBtn.AccessibleDescription = "1";
             this.PencilBtn.FlatAppearance.BorderSize = 0;
             this.PencilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PencilBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.PencilBtn.Location = new System.Drawing.Point(199, 9);
             this.PencilBtn.Margin = new System.Windows.Forms.Padding(0);
             this.PencilBtn.Name = "PencilBtn";
@@ -159,11 +271,12 @@
             this.PencilBtn.Tag = "";
             this.PencilBtn.Text = "P";
             this.PencilBtn.UseVisualStyleBackColor = true;
-            this.PencilBtn.Click += new System.EventHandler(this.PencilBtn_Click);
+            this.PencilBtn.Click += new System.EventHandler(this.PainterBtn_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.Location = new System.Drawing.Point(1070, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
@@ -173,6 +286,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(1070, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
@@ -182,6 +296,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(1070, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
@@ -191,6 +306,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(1070, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
@@ -199,6 +315,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LocationMouseTSSL,
             this.SizePictureTSSL});
@@ -211,7 +328,7 @@
             // LocationMouseTSSL
             // 
             this.LocationMouseTSSL.AutoSize = false;
-            this.LocationMouseTSSL.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.LocationMouseTSSL.BackColor = System.Drawing.SystemColors.ControlDark;
             this.LocationMouseTSSL.Image = global::ImageEditor.Properties.Resources.icons8_Collapse_32px;
             this.LocationMouseTSSL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LocationMouseTSSL.Name = "LocationMouseTSSL";
@@ -222,7 +339,7 @@
             // SizePictureTSSL
             // 
             this.SizePictureTSSL.AutoSize = false;
-            this.SizePictureTSSL.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.SizePictureTSSL.BackColor = System.Drawing.SystemColors.ControlDark;
             this.SizePictureTSSL.Image = global::ImageEditor.Properties.Resources.icons8_Surface_32px;
             this.SizePictureTSSL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SizePictureTSSL.Name = "SizePictureTSSL";
@@ -255,28 +372,14 @@
             this.ShadowPic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShadowPic_MouseDown);
             this.ShadowPic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ShadowPic_MouseMove);
             // 
-            // pictureBox1
+            // BotLeftAnglePnl
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1000, 500);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            // 
-            // domainUpDown1
-            // 
-            this.domainUpDown1.BackColor = System.Drawing.SystemColors.Window;
-            this.domainUpDown1.Location = new System.Drawing.Point(525, 14);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(72, 20);
-            this.domainUpDown1.TabIndex = 6;
-            this.domainUpDown1.TextChanged += new System.EventHandler(this.domainUpDown1_TextChanged);
+            this.BotLeftAnglePnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BotLeftAnglePnl.BackColor = System.Drawing.SystemColors.GrayText;
+            this.BotLeftAnglePnl.Location = new System.Drawing.Point(0, 500);
+            this.BotLeftAnglePnl.Name = "BotLeftAnglePnl";
+            this.BotLeftAnglePnl.Size = new System.Drawing.Size(5, 5);
+            this.BotLeftAnglePnl.TabIndex = 5;
             // 
             // TopRightAnglePnl
             // 
@@ -287,14 +390,29 @@
             this.TopRightAnglePnl.Size = new System.Drawing.Size(5, 5);
             this.TopRightAnglePnl.TabIndex = 4;
             // 
-            // BotLeftAnglePnl
+            // pictureBox1
             // 
-            this.BotLeftAnglePnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BotLeftAnglePnl.BackColor = System.Drawing.SystemColors.GrayText;
-            this.BotLeftAnglePnl.Location = new System.Drawing.Point(0, 500);
-            this.BotLeftAnglePnl.Name = "BotLeftAnglePnl";
-            this.BotLeftAnglePnl.Size = new System.Drawing.Size(5, 5);
-            this.BotLeftAnglePnl.TabIndex = 5;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1000, 500);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            // 
+            // colorDialog1
+            // 
+            this.colorDialog1.FullOpen = true;
+            // 
+            // FoldingPaletteTmr
+            // 
+            this.FoldingPaletteTmr.Interval = 70;
+            this.FoldingPaletteTmr.Tick += new System.EventHandler(this.FoldingPaletteTmr_Tick);
             // 
             // Form1
             // 
@@ -352,6 +470,13 @@
         private System.Windows.Forms.DomainUpDown domainUpDown1;
         private System.Windows.Forms.Panel BotLeftAnglePnl;
         private System.Windows.Forms.Panel TopRightAnglePnl;
+        private System.Windows.Forms.Button PaletteBtn;
+        private System.Windows.Forms.ImageList ImgsPalette;
+        private System.Windows.Forms.Timer FoldingPaletteTmr;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Color2Btn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button RectangleBtn;
     }
 }
 
