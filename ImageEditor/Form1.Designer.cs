@@ -39,6 +39,11 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsPnl = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.LineBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
@@ -61,37 +66,32 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.EditColorsLbl = new System.Windows.Forms.Label();
+            this.EllipseBtn = new System.Windows.Forms.Button();
+            this.RectangleBtn = new System.Windows.Forms.Button();
             this.Color2Lbl = new System.Windows.Forms.Label();
             this.Color2Btn = new System.Windows.Forms.Button();
             this.Color1Lbl = new System.Windows.Forms.Label();
+            this.PaletteBtn = new System.Windows.Forms.Button();
             this.ImgsPalette = new System.Windows.Forms.ImageList(this.components);
             this.SizeDUD = new System.Windows.Forms.DomainUpDown();
             this.Color1Btn = new System.Windows.Forms.Button();
+            this.PencilBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.LocationMouseTSSL = new System.Windows.Forms.ToolStripStatusLabel();
+            this.SizePictureTSSL = new System.Windows.Forms.ToolStripStatusLabel();
             this.BackgroundPnl = new System.Windows.Forms.Panel();
             this.ShadowPic = new System.Windows.Forms.Panel();
             this.BotLeftAnglePnl = new System.Windows.Forms.Panel();
             this.TopRightAnglePnl = new System.Windows.Forms.Panel();
+            this.PatternPB = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.FoldingPaletteTmr = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.PatternPB = new System.Windows.Forms.PictureBox();
-            this.LocationMouseTSSL = new System.Windows.Forms.ToolStripStatusLabel();
-            this.SizePictureTSSL = new System.Windows.Forms.ToolStripStatusLabel();
-            this.LineBtn = new System.Windows.Forms.Button();
-            this.EllipseBtn = new System.Windows.Forms.Button();
-            this.RectangleBtn = new System.Windows.Forms.Button();
-            this.PaletteBtn = new System.Windows.Forms.Button();
-            this.PencilBtn = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.ToolsPnl.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -211,6 +211,73 @@
             this.ToolsPnl.Name = "ToolsPnl";
             this.ToolsPnl.Size = new System.Drawing.Size(1215, 100);
             this.ToolsPnl.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(219, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 19);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Pen";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(358, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 19);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Shapes";
+            // 
+            // LineBtn
+            // 
+            this.LineBtn.AccessibleDescription = "5";
+            this.LineBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LineBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.LineBtn.BackgroundImage = global::ImageEditor.Properties.Resources.icons8_Line_30px;
+            this.LineBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LineBtn.FlatAppearance.BorderSize = 0;
+            this.LineBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LineBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LineBtn.Location = new System.Drawing.Point(331, 10);
+            this.LineBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.LineBtn.Name = "LineBtn";
+            this.LineBtn.Size = new System.Drawing.Size(30, 30);
+            this.LineBtn.TabIndex = 17;
+            this.LineBtn.Tag = "";
+            this.LineBtn.UseVisualStyleBackColor = false;
+            this.LineBtn.Click += new System.EventHandler(this.PainterBtn_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(499, 75);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 19);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Size";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(750, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 19);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Colors";
             // 
             // tableLayoutPanel1
             // 
@@ -485,6 +552,45 @@
             this.EditColorsLbl.Text = "Edit colors";
             this.EditColorsLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // EllipseBtn
+            // 
+            this.EllipseBtn.AccessibleDescription = "4";
+            this.EllipseBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.EllipseBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.EllipseBtn.BackgroundImage = global::ImageEditor.Properties.Resources.icons8_Oval_32px;
+            this.EllipseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.EllipseBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.EllipseBtn.FlatAppearance.BorderSize = 0;
+            this.EllipseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EllipseBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.EllipseBtn.Location = new System.Drawing.Point(411, 10);
+            this.EllipseBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.EllipseBtn.Name = "EllipseBtn";
+            this.EllipseBtn.Size = new System.Drawing.Size(30, 30);
+            this.EllipseBtn.TabIndex = 12;
+            this.EllipseBtn.Tag = "";
+            this.EllipseBtn.UseVisualStyleBackColor = false;
+            this.EllipseBtn.Click += new System.EventHandler(this.PainterBtn_Click);
+            // 
+            // RectangleBtn
+            // 
+            this.RectangleBtn.AccessibleDescription = "7";
+            this.RectangleBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.RectangleBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.RectangleBtn.BackgroundImage = global::ImageEditor.Properties.Resources.icons8_Rectangular_32px;
+            this.RectangleBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RectangleBtn.FlatAppearance.BorderSize = 0;
+            this.RectangleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RectangleBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RectangleBtn.Location = new System.Drawing.Point(371, 10);
+            this.RectangleBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.RectangleBtn.Name = "RectangleBtn";
+            this.RectangleBtn.Size = new System.Drawing.Size(30, 30);
+            this.RectangleBtn.TabIndex = 11;
+            this.RectangleBtn.Tag = "";
+            this.RectangleBtn.UseVisualStyleBackColor = false;
+            this.RectangleBtn.Click += new System.EventHandler(this.PainterBtn_Click);
+            // 
             // Color2Lbl
             // 
             this.Color2Lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -523,6 +629,23 @@
             this.Color1Lbl.Text = "Color 1";
             this.Color1Lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // PaletteBtn
+            // 
+            this.PaletteBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.PaletteBtn.FlatAppearance.BorderSize = 0;
+            this.PaletteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PaletteBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PaletteBtn.ImageKey = "Palette_Step0.png";
+            this.PaletteBtn.ImageList = this.ImgsPalette;
+            this.PaletteBtn.Location = new System.Drawing.Point(924, 5);
+            this.PaletteBtn.Name = "PaletteBtn";
+            this.PaletteBtn.Size = new System.Drawing.Size(35, 35);
+            this.PaletteBtn.TabIndex = 7;
+            this.PaletteBtn.UseVisualStyleBackColor = true;
+            this.PaletteBtn.Click += new System.EventHandler(this.PaletteBtn_Click);
+            this.PaletteBtn.MouseEnter += new System.EventHandler(this.PaletteBtn_MouseEnter);
+            this.PaletteBtn.MouseLeave += new System.EventHandler(this.PaletteBtn_MouseLeave);
+            // 
             // ImgsPalette
             // 
             this.ImgsPalette.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImgsPalette.ImageStream")));
@@ -557,6 +680,25 @@
             this.Color1Btn.TabIndex = 5;
             this.Color1Btn.UseVisualStyleBackColor = false;
             this.Color1Btn.Click += new System.EventHandler(this.Color1Btn_Click);
+            // 
+            // PencilBtn
+            // 
+            this.PencilBtn.AccessibleDescription = "1";
+            this.PencilBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.PencilBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.PencilBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PencilBtn.FlatAppearance.BorderSize = 0;
+            this.PencilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PencilBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PencilBtn.Image = global::ImageEditor.Properties.Resources.icons8_Edit_25px;
+            this.PencilBtn.Location = new System.Drawing.Point(221, 10);
+            this.PencilBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.PencilBtn.Name = "PencilBtn";
+            this.PencilBtn.Size = new System.Drawing.Size(30, 30);
+            this.PencilBtn.TabIndex = 4;
+            this.PencilBtn.Tag = "";
+            this.PencilBtn.UseVisualStyleBackColor = false;
+            this.PencilBtn.Click += new System.EventHandler(this.PainterBtn_Click);
             // 
             // label4
             // 
@@ -614,6 +756,28 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // LocationMouseTSSL
+            // 
+            this.LocationMouseTSSL.AutoSize = false;
+            this.LocationMouseTSSL.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.LocationMouseTSSL.Image = global::ImageEditor.Properties.Resources.icons8_Collapse_32px;
+            this.LocationMouseTSSL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LocationMouseTSSL.Name = "LocationMouseTSSL";
+            this.LocationMouseTSSL.Size = new System.Drawing.Size(200, 17);
+            this.LocationMouseTSSL.Text = "location mouse";
+            this.LocationMouseTSSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SizePictureTSSL
+            // 
+            this.SizePictureTSSL.AutoSize = false;
+            this.SizePictureTSSL.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.SizePictureTSSL.Image = global::ImageEditor.Properties.Resources.icons8_Surface_32px;
+            this.SizePictureTSSL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SizePictureTSSL.Name = "SizePictureTSSL";
+            this.SizePictureTSSL.Size = new System.Drawing.Size(200, 17);
+            this.SizePictureTSSL.Text = "size picturebox";
+            this.SizePictureTSSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // BackgroundPnl
             // 
             this.BackgroundPnl.BackColor = System.Drawing.SystemColors.GrayText;
@@ -658,39 +822,6 @@
             this.TopRightAnglePnl.Size = new System.Drawing.Size(5, 5);
             this.TopRightAnglePnl.TabIndex = 4;
             // 
-            // colorDialog1
-            // 
-            this.colorDialog1.FullOpen = true;
-            // 
-            // FoldingPaletteTmr
-            // 
-            this.FoldingPaletteTmr.Interval = 70;
-            this.FoldingPaletteTmr.Tick += new System.EventHandler(this.FoldingPaletteTmr_Tick);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(750, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 19);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Colors";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(499, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 19);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Size";
-            // 
             // PatternPB
             // 
             this.PatternPB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -710,145 +841,14 @@
             this.PatternPB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PatternPB_MouseMove);
             this.PatternPB.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PatternPB_MouseUp);
             // 
-            // LocationMouseTSSL
+            // colorDialog1
             // 
-            this.LocationMouseTSSL.AutoSize = false;
-            this.LocationMouseTSSL.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.LocationMouseTSSL.Image = global::ImageEditor.Properties.Resources.icons8_Collapse_32px;
-            this.LocationMouseTSSL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LocationMouseTSSL.Name = "LocationMouseTSSL";
-            this.LocationMouseTSSL.Size = new System.Drawing.Size(200, 17);
-            this.LocationMouseTSSL.Text = "location mouse";
-            this.LocationMouseTSSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.colorDialog1.FullOpen = true;
             // 
-            // SizePictureTSSL
+            // FoldingPaletteTmr
             // 
-            this.SizePictureTSSL.AutoSize = false;
-            this.SizePictureTSSL.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.SizePictureTSSL.Image = global::ImageEditor.Properties.Resources.icons8_Surface_32px;
-            this.SizePictureTSSL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SizePictureTSSL.Name = "SizePictureTSSL";
-            this.SizePictureTSSL.Size = new System.Drawing.Size(200, 17);
-            this.SizePictureTSSL.Text = "size picturebox";
-            this.SizePictureTSSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // LineBtn
-            // 
-            this.LineBtn.AccessibleDescription = "5";
-            this.LineBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LineBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.LineBtn.BackgroundImage = global::ImageEditor.Properties.Resources.icons8_Line_30px;
-            this.LineBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LineBtn.FlatAppearance.BorderSize = 0;
-            this.LineBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LineBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LineBtn.Location = new System.Drawing.Point(331, 10);
-            this.LineBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.LineBtn.Name = "LineBtn";
-            this.LineBtn.Size = new System.Drawing.Size(30, 30);
-            this.LineBtn.TabIndex = 17;
-            this.LineBtn.Tag = "";
-            this.LineBtn.UseVisualStyleBackColor = false;
-            this.LineBtn.Click += new System.EventHandler(this.PainterBtn_Click);
-            // 
-            // EllipseBtn
-            // 
-            this.EllipseBtn.AccessibleDescription = "4";
-            this.EllipseBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.EllipseBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.EllipseBtn.BackgroundImage = global::ImageEditor.Properties.Resources.icons8_Oval_32px;
-            this.EllipseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.EllipseBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.EllipseBtn.FlatAppearance.BorderSize = 0;
-            this.EllipseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EllipseBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.EllipseBtn.Location = new System.Drawing.Point(411, 10);
-            this.EllipseBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.EllipseBtn.Name = "EllipseBtn";
-            this.EllipseBtn.Size = new System.Drawing.Size(30, 30);
-            this.EllipseBtn.TabIndex = 12;
-            this.EllipseBtn.Tag = "";
-            this.EllipseBtn.UseVisualStyleBackColor = false;
-            this.EllipseBtn.Click += new System.EventHandler(this.PainterBtn_Click);
-            // 
-            // RectangleBtn
-            // 
-            this.RectangleBtn.AccessibleDescription = "7";
-            this.RectangleBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.RectangleBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.RectangleBtn.BackgroundImage = global::ImageEditor.Properties.Resources.icons8_Rectangular_32px;
-            this.RectangleBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RectangleBtn.FlatAppearance.BorderSize = 0;
-            this.RectangleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RectangleBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RectangleBtn.Location = new System.Drawing.Point(371, 10);
-            this.RectangleBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.RectangleBtn.Name = "RectangleBtn";
-            this.RectangleBtn.Size = new System.Drawing.Size(30, 30);
-            this.RectangleBtn.TabIndex = 11;
-            this.RectangleBtn.Tag = "";
-            this.RectangleBtn.UseVisualStyleBackColor = false;
-            this.RectangleBtn.Click += new System.EventHandler(this.PainterBtn_Click);
-            // 
-            // PaletteBtn
-            // 
-            this.PaletteBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.PaletteBtn.FlatAppearance.BorderSize = 0;
-            this.PaletteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PaletteBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PaletteBtn.ImageKey = "Palette_Step0.png";
-            this.PaletteBtn.ImageList = this.ImgsPalette;
-            this.PaletteBtn.Location = new System.Drawing.Point(924, 5);
-            this.PaletteBtn.Name = "PaletteBtn";
-            this.PaletteBtn.Size = new System.Drawing.Size(35, 35);
-            this.PaletteBtn.TabIndex = 7;
-            this.PaletteBtn.UseVisualStyleBackColor = true;
-            this.PaletteBtn.Click += new System.EventHandler(this.PaletteBtn_Click);
-            this.PaletteBtn.MouseEnter += new System.EventHandler(this.PaletteBtn_MouseEnter);
-            this.PaletteBtn.MouseLeave += new System.EventHandler(this.PaletteBtn_MouseLeave);
-            // 
-            // PencilBtn
-            // 
-            this.PencilBtn.AccessibleDescription = "1";
-            this.PencilBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.PencilBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.PencilBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PencilBtn.FlatAppearance.BorderSize = 0;
-            this.PencilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PencilBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PencilBtn.Image = global::ImageEditor.Properties.Resources.icons8_Edit_25px;
-            this.PencilBtn.Location = new System.Drawing.Point(221, 10);
-            this.PencilBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.PencilBtn.Name = "PencilBtn";
-            this.PencilBtn.Size = new System.Drawing.Size(30, 30);
-            this.PencilBtn.TabIndex = 4;
-            this.PencilBtn.Tag = "";
-            this.PencilBtn.UseVisualStyleBackColor = false;
-            this.PencilBtn.Click += new System.EventHandler(this.PainterBtn_Click);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(358, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 19);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Shapes";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(219, 75);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 19);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Pen";
+            this.FoldingPaletteTmr.Interval = 70;
+            this.FoldingPaletteTmr.Tick += new System.EventHandler(this.FoldingPaletteTmr_Tick);
             // 
             // Form1
             // 
