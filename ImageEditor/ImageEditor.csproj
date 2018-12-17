@@ -88,8 +88,15 @@
     <None Include="Resources\icons8_Surface_32px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cursor1.cur" />
+    <Content Include="Figures.cur" />
     <Content Include="Pencil.cur" />
+    <None Include="Resources\icons8_Line_30px.png" />
+    <None Include="Resources\icons8_Edit_25px.png" />
+    <None Include="Resources\icons8_Edit_32px_1.png" />
+    <None Include="Resources\icons8_Edit_32px.png" />
+    <None Include="Resources\icons8_Rectangular_32px.png" />
+    <None Include="Resources\icons8_Oval_32px.png" />
+    <None Include="Resources\icons8_Oval_30px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
